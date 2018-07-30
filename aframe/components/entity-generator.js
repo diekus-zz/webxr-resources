@@ -7,7 +7,7 @@ AFRAME.registerComponent('entity-generator', {
         number_items:{type:'int', default:2},
     },
     init: function(){
-        for (i = 0; i < number_items; i++){
+        for (i = 0; i < this.data.number_items; i++){
             let ne = document.createElement(this.data.entity_name);
             for(a = 0; a < attributes.length; a++){
                 let att = attributes[a].split(':');
