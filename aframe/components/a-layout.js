@@ -44,9 +44,6 @@ AFRAME.registerComponent('a-layout', {
                 f++;
             }
         }
-    },
-    rotate : function(){
-
     }
 });
 
