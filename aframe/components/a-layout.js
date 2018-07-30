@@ -12,6 +12,17 @@ AFRAME.registerComponent('a-layout', {
         this.data.items = this.el.children;
         this.setCircleLayout();
     },
+    update:function(){
+        this.data.items = this.el.children;
+        switch(this.data.shape){
+            case 'circle':
+                this.setCircleLayout();
+                break;
+            case 'grid':
+                this.setGridLayout();
+                break;
+        }
+    },
     setCircleLayout : function(){
         let radius = this.data.modifier;
         let delta = 360/ this.data.items.length;
