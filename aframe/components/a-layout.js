@@ -73,6 +73,7 @@ AFRAME.registerComponent('a-layout', {
             }
         }
     },
+    //for the time being refresh is set as a way to force layout after insertion of entity in runtime if needed
     refreshLayout : function(){
         this.data.items = this.el.children;
         switch(this.data.shape){
