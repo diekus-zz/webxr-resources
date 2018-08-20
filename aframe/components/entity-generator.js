@@ -16,7 +16,7 @@ AFRAME.registerComponent('entity-generator', {
             let ne = document.createElement(this.data.entity_name);
             atts = this.data.attributes.split('&');
              for(a = 0; a < atts.length; a++){
-                 att = atts[a].split(':');
+                 att = atts[a].split('=');
                  att[1] != null?ne.setAttribute(att[0], att[1]):ne.setAttribute(att[0], '');
               }
               if(this.data.id_generation){
