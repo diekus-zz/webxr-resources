@@ -48,7 +48,7 @@ AFRAME.registerComponent('a-layout', {
         let delta = 360/ this.data.items.length;
         for(i = 0; i < this.data.items.length; i++){
             if(this.data.animation){
-                let tween_rot = new AFRAME.TWEEN.Tween(this.data.items[i].object3D.rotation).to({y:toRadians(-(90-delta * -i))}, this.data.dur_anim*2);
+                let tween_rot = new AFRAME.TWEEN.Tween(this.data.items[i].object3D.rotation).to({y:toRadians(90-delta * i)}, this.data.dur_anim*2);
                 tween_rot.easing(TWEEN.Easing.Cubic.Out);
                 tween_rot.start();
                 let tween_pos = new AFRAME.TWEEN.Tween(this.data.items[i].object3D.position).to({x:(this.data.modifier * Math.cos(toRadians(delta * i))), y: 0, z:(this.data.modifier * Math.sin(toRadians(delta * i)))}, this.data.dur_anim);
@@ -56,7 +56,7 @@ AFRAME.registerComponent('a-layout', {
                 tween_pos.start();
             }
             else{
-                this.data.items[i].object3D.rotateY(toRadians(180-(90-delta * -i)));
+                this.data.items[i].object3D.rotation.set(0, toRadians(90-delta * i), 0);
                 this.data.items[i].object3D.position.set(radius * Math.cos(toRadians(delta * i)), 0, radius * Math.sin(toRadians(delta * i)));
             }
             //this.data.items[i].addEventListener('click', layout_item_click);
